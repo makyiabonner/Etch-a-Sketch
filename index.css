@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@500&family=Righteous&display=swap');
+
+
+.title{
+    font-size:7rem;
+    font-family: 'Anybody', cursive;
+    text-align: center;
+}
+#colorBtn, #rainbowBtn, #eraserBtn, #clearBtn{
+    font-size: 3rem;
+    outline: none;
+}
+.settings{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+input[type='color']{
+    height:100px;
+    width:100px;
+    border-radius: 50px;
+    border:none;
+    outline:none;
+    padding:0px;
+}
+
+  
+  input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+input[type='color']:hover {
+    transition: transform 0.1s ease-in-out;
+    transform: scale(1.1);
+  }
+  input[type='color']:active {
+    transition: transform 0.1s ease-out;
+    transform: scale(1);
+  }
+button{
+    margin: 12px;
+    background-color: rgb(187, 187, 187);
+    color: white;
+    border-radius: 12px;
+}
+button:hover{
+    box-shadow: inset 400px 0 0 0 rgb(88, 88, 88);
+    transition: ease-in-out .3s;
+
+}
+#grid{
+  background: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height:500px;
+  width: 500px;
+}
+
+footer{
+    font-family: "Montserrat";
+}
