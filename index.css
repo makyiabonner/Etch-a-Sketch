@@ -2,15 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anybody:wght@500&family=Righteous&display=swap');
 
-
+body{
+  background: rgb(236, 255, 205);
+}
 .title{
     font-size:7rem;
     font-family: 'Anybody', cursive;
     text-align: center;
+    color: rgb(102, 80, 33);
 }
 #colorBtn, #rainbowBtn, #eraserBtn, #clearBtn{
     font-size: 3rem;
     outline: none;
+    text-align: left;
+    width:340px;
 }
 .settings{
   display:flex;
@@ -18,6 +23,7 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+
 input[type='color']{
     height:100px;
     width:100px;
@@ -48,12 +54,12 @@ input[type='color']:hover {
   }
 button{
     margin: 12px;
-    background-color: rgb(187, 187, 187);
+    background-color: rgb(187, 172, 152);
     color: white;
     border-radius: 12px;
 }
 button:hover{
-    box-shadow: inset 400px 0 0 0 rgb(88, 88, 88);
+    box-shadow: inset 400px 0 0 0 rgb(88, 53, 0);
     transition: ease-in-out .3s;
 
 }
@@ -64,9 +70,11 @@ button:hover{
   background: white;
   height:600px;
   width: 600px;
-  box-shadow:1px 1px 15px;
+  box-shadow:1px 1px 20px;
 }
-
+#sizeSlider{
+  width:15%;
+}
 footer{
     font-family: "Montserrat";
 }
