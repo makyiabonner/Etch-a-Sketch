@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anybody:wght@500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 body{
   background: rgb(236, 255, 205);
@@ -16,6 +18,7 @@ body{
     outline: none;
     text-align: left;
     width:340px;
+    font-family: 'Kaushan Script', cursive;
 }
 .settings{
   display:flex;
@@ -73,7 +76,20 @@ button:hover{
   box-shadow:1px 1px 20px;
 }
 #sizeSlider{
+  -webkit-appearance: none;
+  border-radius: 25px;
+  height:8px;
   width:15%;
+  box-shadow: 0px 1px 10px black;
+  background-color:rgb(117, 117, 117);
+}
+#sizeSlider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  background-color: rgb(97, 63, 63);
+  width:18px;
+  height:18px;
+  border-radius: 10px;
+  border:white 2px solid;
 }
 footer{
     font-family: "Montserrat";
