@@ -67,13 +67,23 @@ button:hover{
 
 }
 #grid{
+  display: grid;
   position:fixed;
+  background-color: white;
   top:180;
   right:700px;
-  background: white;
   height:600px;
   width: 600px;
   box-shadow:1px 1px 20px;
+}
+
+.gridDivs{
+  display:grid;
+  background-color: white;
+  border: solid .8px black;
+}
+#sizeValue{
+  font-family: "Montserrat";
 }
 #sizeSlider{
   -webkit-appearance: none;
