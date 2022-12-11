@@ -66,6 +66,12 @@ button:hover{
     transition: ease-in-out .3s;
 
 }
+.clicked{
+  background-color: rgb(88, 53, 0);
+}
+.nonClicked{
+  background-color: rgb(187, 172, 152);
+}
 #grid{
   display: grid;
   position:fixed;
@@ -74,7 +80,9 @@ button:hover{
   right:700px;
   height:600px;
   width: 600px;
+  cursor: crosshair;
   box-shadow:1px 1px 20px;
+
 }
 
 .gridDivs{
