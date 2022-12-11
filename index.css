@@ -80,7 +80,9 @@ button:hover{
 .gridDivs{
   display:grid;
   background-color: white;
-  border: solid .8px black;
+}
+.gridDivs:hover{
+  background: rgb(187, 169, 156);
 }
 #sizeValue{
   font-family: "Montserrat";
