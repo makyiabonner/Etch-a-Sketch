@@ -109,6 +109,12 @@ button:hover{
   border-radius: 10px;
   border:white 2px solid;
 }
+a:link{
+  text-decoration: none;
+}
+a:hover{
+  color:rgb(179, 141, 17);
+}
 footer{
     font-family: "Montserrat";
 }
