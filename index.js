@@ -1,4 +1,4 @@
-let colorPicker = "colorPicker";
+let colorPicker = document.getElementById("colorPicker");
 let colorBtn = document.getElementById("colorBtn");
 let rainbowBtn = document.getElementById("rainbowBtn");
 let eraserBtn = document.getElementById("eraserBtn");
@@ -8,29 +8,35 @@ let sizeValue = document.getElementById("sizeValue");
 let sizeSlider = document.getElementById("sizeSlider")
 let button = document.getElementsByTagName("button");
 let grid = document.getElementById("grid");
-const gridBoxes = document.createElement('div');
-
+let gridBoxes = document.createElement('div');
 
 //making slider functional
 slider.addEventListener("input", function setupGrid(){
     sizeValue.textContent = `${this.value} x ${this.value}`; 
     grid.style.gridTemplateColumns = `repeat(${this.value},1fr)`;
     grid.style.gridTemplateRows = `repeat(${this.value}, 1fr)`;
-    let a = this.value * this.value;
+    let valueSquared = this.value * this.value;
  
 //using slider to add blocks to grid
-    for(let i = 0; i < a; i++){   
+    for(let i = 0; i < valueSquared; i++){   
         const gridBoxes = document.createElement('div');
-         gridBoxes.className = "gridDivs";
-          grid.append(gridBoxes);
-        };
-    });
+         grid.style.background = "white";
+          grid.appendChild(gridBoxes).classList.add("gridDivs");
+    }
 
 //making modes clicked recognizable to host
 colorBtn.onclick = function colorHighlighted(){ 
     colorBtn.classList.add("clicked");
     rainbowBtn.classList.remove("clicked");
-    eraserBtn.classList.remove("clicked");}
+    eraserBtn.classList.remove("clicked");
+
+//making Color Button Grid boxes clicked recognizeable to host
+    if(colorBtn.classList.contains("clicked")){
+        let boxes = grid.querySelectorAll(".gridDivs");
+        boxes.forEach(boxes => boxes.addEventListener('mouseover', ()=> {
+            boxes.style.background = colorPicker.value;
+        }))}
+}
 
 rainbowBtn.onclick = function rainbowHighlighted(){
     colorBtn.classList.remove("clicked");
@@ -43,4 +49,11 @@ eraserBtn.onclick = function eraserHighlighted(){
     rainbowBtn.classList.remove("clicked");
     eraserBtn.classList.add("clicked")
 }
-//making boxes clicked recognizeable to host
+
+/* Clear Mode isn't highlighted because of brief usage */
+
+    });
+console.log(colorPicker.value)
+
+
+

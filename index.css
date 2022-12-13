@@ -75,7 +75,6 @@ button:hover{
 #grid{
   display: grid;
   position:fixed;
-  background-color: white;
   top:180;
   right:700px;
   height:600px;
@@ -87,7 +86,6 @@ button:hover{
 
 .gridDivs{
   display:grid;
-  background-color: white;
 }
 .gridDivs:hover{
   background: rgb(187, 169, 156);
