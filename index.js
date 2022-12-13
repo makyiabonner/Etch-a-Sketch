@@ -66,10 +66,14 @@ eraserBtn.onclick = function eraserHighlighted(){
             boxes.style.background = "white";
         }))}
 }
-
+//making Clear Button clears Grid boxes for host
+    let boxes = grid.querySelectorAll(".gridDivs");
+    boxes.forEach(boxes => clearBtn.addEventListener('click', ()=> {
+        boxes.style.background = "white";
+}))})
+        
 /* Clear Mode isn't highlighted because of brief usage */
 
-    });
 console.log(colorPicker.value)
 
 
