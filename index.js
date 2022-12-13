@@ -42,6 +42,16 @@ rainbowBtn.onclick = function rainbowHighlighted(){
     colorBtn.classList.remove("clicked");
     rainbowBtn.classList.add("clicked");
     eraserBtn.classList.remove("clicked");
+
+//making Rainbow Button Grid boxes clicked recognizeable to host
+if(rainbowBtn.classList.contains("clicked")){
+    let boxes = grid.querySelectorAll(".gridDivs");
+    boxes.forEach(boxes => boxes.addEventListener('mouseover', ()=> {
+            let r = Math.floor(Math.random()*255);
+            let g = Math.floor(Math.random()*255);
+            let b = Math.floor(Math.random()*255);
+            boxes.style.background = `rgb(${r},${g},${b})`;
+    }))}
 }
 
 eraserBtn.onclick = function eraserHighlighted(){
