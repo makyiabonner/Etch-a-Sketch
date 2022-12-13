@@ -44,9 +44,9 @@ rainbowBtn.onclick = function rainbowHighlighted(){
     eraserBtn.classList.remove("clicked");
 
 //making Rainbow Button Grid boxes clicked recognizeable to host
-if(rainbowBtn.classList.contains("clicked")){
-    let boxes = grid.querySelectorAll(".gridDivs");
-    boxes.forEach(boxes => boxes.addEventListener('mouseover', ()=> {
+    if(rainbowBtn.classList.contains("clicked")){
+        let boxes = grid.querySelectorAll(".gridDivs");
+        boxes.forEach(boxes => boxes.addEventListener('mouseover', ()=> {
             let r = Math.floor(Math.random()*255);
             let g = Math.floor(Math.random()*255);
             let b = Math.floor(Math.random()*255);
@@ -57,7 +57,14 @@ if(rainbowBtn.classList.contains("clicked")){
 eraserBtn.onclick = function eraserHighlighted(){
     colorBtn.classList.remove("clicked");
     rainbowBtn.classList.remove("clicked");
-    eraserBtn.classList.add("clicked")
+    eraserBtn.classList.add("clicked");
+
+//making Eraser Button Grid boxes clicked recognizeable to host
+    if(eraserBtn.classList.contains("clicked")){
+        let boxes = grid.querySelectorAll(".gridDivs");
+        boxes.forEach(boxes => boxes.addEventListener('mouseover', ()=> {
+            boxes.style.background = "white";
+        }))}
 }
 
 /* Clear Mode isn't highlighted because of brief usage */
