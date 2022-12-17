@@ -11,11 +11,13 @@ let grid = document.getElementById("grid");
 let gridBoxes = document.createElement('div');
 
 //making slider functional
-slider.addEventListener("input", function setupGrid(){
-    sizeValue.textContent = `${this.value} x ${this.value}`; 
-    grid.style.gridTemplateColumns = `repeat(${this.value},1fr)`;
-    grid.style.gridTemplateRows = `repeat(${this.value}, 1fr)`;
-    let valueSquared = this.value * this.value;
+slider.addEventListener("input", (sliderVal) => setupGrid(sliderVal.target.value));
+
+function setupGrid(value){
+    sizeValue.textContent = `${value} x ${value}`; 
+    grid.style.gridTemplateColumns = `repeat(${value},1fr)`;
+    grid.style.gridTemplateRows = `repeat(${value}, 1fr)`;
+    let valueSquared = value * value;
  
 //using slider to add blocks to grid
     for(let i = 0; i < valueSquared; i++){   
@@ -70,7 +72,7 @@ eraserBtn.onclick = function eraserHighlighted(){
     let boxes = grid.querySelectorAll(".gridDivs");
     boxes.forEach(boxes => clearBtn.addEventListener('click', ()=> {
         boxes.style.background = "white";
-}))})
+}))}
         
 /* Clear Mode isn't highlighted because of brief usage */
 
