@@ -10,6 +10,44 @@ let button = document.getElementsByTagName("button");
 let grid = document.getElementById("grid");
 let gridBoxes = document.createElement('div');
 
+DEFAULT_SIZE = 16;
+let currentMode
+let currentSize = DEFAULT_SIZE;
+
+function boxColor(mode){
+    if (currentMode == "colorBtn"){
+        mode.target.style.background = colorPicker.value;
+    }
+    else if (currentMode == "rainbowBtn"){
+        let r = Math.floor(Math.random()*255);
+        let g = Math.floor(Math.random()*255);
+        let b = Math.floor(Math.random()*255);
+            
+        mode.target.style.background = `rgb(${r},${g},${b})`;
+    }
+    else if (currentMode == "eraserBtn"){
+        mode.target.style.background = "white";
+    }
+}
+
+function clickedMode(mode){
+    currentMode = mode;
+    if (currentMode == "colorBtn"){
+        colorBtn.classList.add("clicked");
+        rainbowBtn.classList.remove("clicked");
+        eraserBtn.classList.remove("clicked");
+    }
+    else if (currentMode == "rainbowBtn"){
+        colorBtn.classList.remove("clicked");
+        rainbowBtn.classList.add("clicked");
+        eraserBtn.classList.remove("clicked");
+    }
+    else if (currentMode == "eraserBtn"){
+        colorBtn.classList.remove("clicked");
+        rainbowBtn.classList.remove("clicked");
+        eraserBtn.classList.add("clicked");
+    }
+}
 //making slider functional
 slider.addEventListener("input", (sliderVal) => setupGrid(sliderVal.target.value));
 
@@ -17,65 +55,34 @@ function setupGrid(value){
     sizeValue.textContent = `${value} x ${value}`; 
     grid.style.gridTemplateColumns = `repeat(${value},1fr)`;
     grid.style.gridTemplateRows = `repeat(${value}, 1fr)`;
-    let valueSquared = value * value;
  
 //using slider to add blocks to grid
-    for(let i = 0; i < valueSquared; i++){   
+    for(let i = 0; i < value * value; i++){   
         const gridBoxes = document.createElement('div');
          grid.style.background = "white";
+         gridBoxes.addEventListener("mouseover", boxColor);
           grid.appendChild(gridBoxes).classList.add("gridDivs");
     }
-
+}
 //making modes clicked recognizable to host
-colorBtn.onclick = function colorHighlighted(){ 
-    colorBtn.classList.add("clicked");
-    rainbowBtn.classList.remove("clicked");
-    eraserBtn.classList.remove("clicked");
+colorBtn.onclick = () => clickedMode("colorBtn");
+rainbowBtn.onclick = () => clickedMode("rainbowBtn");
+eraserBtn.onclick = () => clickedMode("eraserBtn");
+clearBtn.onclick = () => clickedMode("clearBtn");
 
 //making Color Button Grid boxes clicked recognizeable to host
-    if(colorBtn.classList.contains("clicked")){
-        let boxes = grid.querySelectorAll(".gridDivs");
-        boxes.forEach(boxes => boxes.addEventListener('mouseover', ()=> {
-            boxes.style.background = colorPicker.value;
-        }))}
-}
 
-rainbowBtn.onclick = function rainbowHighlighted(){
-    colorBtn.classList.remove("clicked");
-    rainbowBtn.classList.add("clicked");
-    eraserBtn.classList.remove("clicked");
+
+
 
 //making Rainbow Button Grid boxes clicked recognizeable to host
-    if(rainbowBtn.classList.contains("clicked")){
-        let boxes = grid.querySelectorAll(".gridDivs");
-        boxes.forEach(boxes => boxes.addEventListener('mouseover', ()=> {
-            let r = Math.floor(Math.random()*255);
-            let g = Math.floor(Math.random()*255);
-            let b = Math.floor(Math.random()*255);
-            boxes.style.background = `rgb(${r},${g},${b})`;
-    }))}
-}
 
-eraserBtn.onclick = function eraserHighlighted(){
-    colorBtn.classList.remove("clicked");
-    rainbowBtn.classList.remove("clicked");
-    eraserBtn.classList.add("clicked");
+
+
 
 //making Eraser Button Grid boxes clicked recognizeable to host
-    if(eraserBtn.classList.contains("clicked")){
-        let boxes = grid.querySelectorAll(".gridDivs");
-        boxes.forEach(boxes => boxes.addEventListener('mouseover', ()=> {
-            boxes.style.background = "white";
-        }))}
-}
+
 //making Clear Button Clears Grid boxes  host
-    let boxes = grid.querySelectorAll(".gridDivs");
-    boxes.forEach(boxes => clearBtn.addEventListener('click', ()=> {
-        boxes.style.background = "white";
-}))}
         
 /* Clear Mode isn't highlighted because of brief usage */
-
-
-
-
+window.onload =setupGrid(DEFAULT_SIZE);
