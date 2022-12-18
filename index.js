@@ -72,8 +72,10 @@ function setupGrid(value){
 
 //making Clear Button Clears Grid boxes for host
 function clearGrid(){
-    grid.innerHTML = "";
- }
+    let boxes = grid.querySelectorAll(".gridDivs");
+    boxes.forEach(boxes => clearBtn.addEventListener('click', ()=> {
+        boxes.style.background = "white";
+}))}
 
 colorBtn.onclick = () => clickedMode("colorBtn");
 rainbowBtn.onclick = () => clickedMode("rainbowBtn");
