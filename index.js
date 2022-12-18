@@ -32,11 +32,6 @@ function boxColor(mode){
     }
 }
 
-//making Clear Button Clears Grid boxes for host
-function clearGrid(){
-    grid.innerHTML = "";
-}
-
 //making modes clicked recognizable to host
 function clickedMode(mode){
     currentMode = mode;
@@ -57,10 +52,6 @@ function clickedMode(mode){
     }
 /* Clear Mode isn't highlighted because of brief usage */
 }
-function reloadGrid(){
-    clearGrid();
-    setupGrid(currentSize);
-}
 
 //making slider functional
 slider.addEventListener("input", (sliderVal) => setupGrid(sliderVal.target.value));
@@ -69,7 +60,7 @@ function setupGrid(value){
     sizeValue.textContent = `${value} x ${value}`; 
     grid.style.gridTemplateColumns = `repeat(${value},1fr)`;
     grid.style.gridTemplateRows = `repeat(${value}, 1fr)`;
- 
+    grid.innerHTML = ""
 //using slider to add blocks to grid
     for(let i = 0; i < value * value; i++){   
         const gridBoxes = document.createElement('div');
@@ -78,6 +69,11 @@ function setupGrid(value){
           grid.appendChild(gridBoxes).classList.add("gridDivs");
     }
 }
+
+//making Clear Button Clears Grid boxes for host
+function clearGrid(){
+    grid.innerHTML = "";
+ }
 
 colorBtn.onclick = () => clickedMode("colorBtn");
 rainbowBtn.onclick = () => clickedMode("rainbowBtn");
