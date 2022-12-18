@@ -34,7 +34,7 @@ function boxColor(mode){
 
 //making Clear Button Clears Grid boxes for host
 function clearGrid(){
-    grid.innerHTML = ""
+    grid.innerHTML = "";
 }
 
 //making modes clicked recognizable to host
