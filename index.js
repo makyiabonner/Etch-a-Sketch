@@ -10,14 +10,16 @@ let button = document.getElementsByTagName("button");
 let grid = document.getElementById("grid");
 let gridBoxes = document.createElement('div');
 
-DEFAULT_SIZE = 16;
+let DEFAULT_SIZE = 16;
 let currentMode
 let currentSize = DEFAULT_SIZE;
 
 function boxColor(mode){
+    //making Color Button Grid boxes clicked recognizeable to host
     if (currentMode == "colorBtn"){
         mode.target.style.background = colorPicker.value;
     }
+    //making Rainbow Button Grid boxes clicked recognizeable to host
     else if (currentMode == "rainbowBtn"){
         let r = Math.floor(Math.random()*255);
         let g = Math.floor(Math.random()*255);
@@ -30,6 +32,12 @@ function boxColor(mode){
     }
 }
 
+//making Clear Button Clears Grid boxes for host
+function clearGrid(){
+    grid.innerHTML = ""
+}
+
+//making modes clicked recognizable to host
 function clickedMode(mode){
     currentMode = mode;
     if (currentMode == "colorBtn"){
@@ -47,7 +55,13 @@ function clickedMode(mode){
         rainbowBtn.classList.remove("clicked");
         eraserBtn.classList.add("clicked");
     }
+/* Clear Mode isn't highlighted because of brief usage */
 }
+function reloadGrid(){
+    clearGrid();
+    setupGrid(currentSize);
+}
+
 //making slider functional
 slider.addEventListener("input", (sliderVal) => setupGrid(sliderVal.target.value));
 
@@ -64,25 +78,10 @@ function setupGrid(value){
           grid.appendChild(gridBoxes).classList.add("gridDivs");
     }
 }
-//making modes clicked recognizable to host
+
 colorBtn.onclick = () => clickedMode("colorBtn");
 rainbowBtn.onclick = () => clickedMode("rainbowBtn");
 eraserBtn.onclick = () => clickedMode("eraserBtn");
-clearBtn.onclick = () => clickedMode("clearBtn");
+clearBtn.onclick = () => clearGrid();
 
-//making Color Button Grid boxes clicked recognizeable to host
-
-
-
-
-//making Rainbow Button Grid boxes clicked recognizeable to host
-
-
-
-
-//making Eraser Button Grid boxes clicked recognizeable to host
-
-//making Clear Button Clears Grid boxes  host
-        
-/* Clear Mode isn't highlighted because of brief usage */
-window.onload =setupGrid(DEFAULT_SIZE);
+window.onload = setupGrid(DEFAULT_SIZE);
