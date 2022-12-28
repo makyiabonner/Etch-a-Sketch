@@ -9,6 +9,7 @@ body{
   overflow: hidden;
 }
 .title{
+    margin-top: 30px;
     position: sticky;
     font-size:7rem;
     font-family: 'Anybody', cursive;
