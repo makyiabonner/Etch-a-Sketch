@@ -9,6 +9,7 @@ body{
   overflow: hidden;
 }
 .title{
+    position: sticky;
     font-size:7rem;
     font-family: 'Anybody', cursive;
     text-align: center;
@@ -76,7 +77,7 @@ button:hover{
 #grid{
   display:grid;
   position:relative;
-  bottom:33rem;
+  bottom:35rem;
   left:700px;
   height:600px;
   width: 600px;
