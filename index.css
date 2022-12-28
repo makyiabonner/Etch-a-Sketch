@@ -6,6 +6,7 @@
 
 body{
   background: rgb(236, 255, 205);
+  overflow: hidden;
 }
 .title{
     font-size:7rem;
@@ -73,16 +74,16 @@ button:hover{
   background-color: rgb(187, 172, 152);
 }
 #grid{
-  display: grid;
-  position:absolute;
-  bottom:2rem;
+  display:grid;
+  position:relative;
+  bottom:33rem;
   left:700px;
   height:600px;
   width: 600px;
   cursor: crosshair;
   box-shadow:1px 1px 20px;
-
 }
+
 
 .gridDivs{
   display:grid;
@@ -118,4 +119,5 @@ a:hover{
 footer{
     font-family: "Montserrat";
     position: relative;
+    bottom:38rem;
 }
