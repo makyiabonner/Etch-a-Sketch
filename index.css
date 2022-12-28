@@ -10,7 +10,6 @@ body{
 }
 .title{
     margin-top: 30px;
-    position: sticky;
     font-size:7rem;
     font-family: 'Anybody', cursive;
     text-align: center;
@@ -80,8 +79,8 @@ button:hover{
   position:relative;
   bottom: 35rem;
   left:700px;
-  height:600px;
-  width: 600px;
+  height:70vh;
+  width: 30vw;
   cursor: crosshair;
   box-shadow:1px 1px 20px;
 }
