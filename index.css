@@ -8,11 +8,8 @@ body{
   background: rgb(236, 255, 205);
 }
 /*Fixed*/
-header{
-  display: flex;
-  justify-content: center;
-}
 .title{
+    text-align: center;
     font-size:80px;
     font-family: 'Anybody', cursive;
     color: rgb(102, 80, 33);
