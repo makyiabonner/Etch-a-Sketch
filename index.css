@@ -74,9 +74,9 @@ button:hover{
 }
 #grid{
   display: grid;
-  position:fixed;
-  top:180;
-  right:700px;
+  position:absolute;
+  bottom:2rem;
+  left:700px;
   height:600px;
   width: 600px;
   cursor: crosshair;
@@ -117,4 +117,5 @@ a:hover{
 }
 footer{
     font-family: "Montserrat";
+    position: relative;
 }
