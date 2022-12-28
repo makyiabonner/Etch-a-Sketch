@@ -78,7 +78,7 @@ button:hover{
 #grid{
   display:grid;
   position:relative;
-  bottom:35rem;
+  bottom: 35rem;
   left:700px;
   height:600px;
   width: 600px;
