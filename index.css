@@ -6,13 +6,16 @@
 
 body{
   background: rgb(236, 255, 205);
-  overflow: hidden;
+}
+header{
+  display: flex;
+  justify-content: center;
 }
 .title{
     margin-top: 30px;
+    position: sticky;
     font-size:7rem;
     font-family: 'Anybody', cursive;
-    text-align: center;
     color: rgb(102, 80, 33);
 }
 #colorBtn, #rainbowBtn, #eraserBtn, #clearBtn{
@@ -28,7 +31,9 @@ body{
   justify-content: flex-start;
   align-items: flex-start;
 }
-
+main{
+  height: 65vh;
+}
 input[type='color']{
     height:100px;
     width:100px;
@@ -79,8 +84,8 @@ button:hover{
   position:relative;
   bottom: 35rem;
   left:700px;
-  height:70vh;
-  width: 30vw;
+  height:600px;
+  width: 600px;
   cursor: crosshair;
   box-shadow:1px 1px 20px;
 }
@@ -118,7 +123,9 @@ a:hover{
   color:rgb(179, 141, 17);
 }
 footer{
+  display: flex;
     font-family: "Montserrat";
-    position: relative;
-    bottom:38rem;
+    position: absolute;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
